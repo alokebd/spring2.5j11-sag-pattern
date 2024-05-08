@@ -22,11 +22,11 @@ b). Uncommeted grpc port (axoniq.axonserver.port=8124)
 
 NOTE: SAGA is an event driven pattern where following vanilla of coding required to address this architecture.
 
-1). The starting point of services required to declare the sage for annotation-based configuration (in this example, it starts with OrderService).
+1). The starting point of services required to declare the saga for annotation-based configuration (in this example, it starts with OrderService).
 
 2). The @StartSaga and @EndSaga will register the @SagaEventHandler (check OrderProcessingSaga.java file)
 
-3). The @Aggregate the life cycle of @CommandHandler and @EventSourcingHandler. As an example, product controller creates command that sends to 
+3). The @Aggregate will address life cycle of @CommandHandler and @EventSourcingHandler. As an example, product controller creates command that sends to 
 CommandGateway. The gateway binds with @SagaEventHandler. Now the event will be published by Aggregare functionality.
 
 
